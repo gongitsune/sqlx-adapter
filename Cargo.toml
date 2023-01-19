@@ -9,13 +9,13 @@ homepage= "https://github.com/casbin-rs/sqlx-adapter"
 readme= "README.md"
 
 [dependencies]
-casbin = { version = "2.0.8", default-features = false }
-sqlx = { version = "0.6", default-features = false, features = [ "macros" ] }
-async-trait = "0.1.51"
+casbin = { version = "2.0.9", default-features = false }
+sqlx = { version = "0.6.2", default-features = false, features = [ "macros" ] }
+async-trait = "0.1.61"
 dotenv = { version = "0.15.0", default-features = false }
-tokio = { version = "1.10.0", default-features = false, optional = true }
-async-std = { version = "1.9.0", default-features = false, optional = true }
-actix-rt = { version = "2.2.0", default-features = false, optional = true }
+tokio = { version = "1.24.2", default-features = false, optional = true }
+async-std = { version = "1.12.0", default-features = false, optional = true }
+actix-rt = { version = "2.7.0", default-features = false, optional = true }
 
 [features]
 default = ["postgres", "runtime-tokio-native-tls", "offline"]
@@ -40,9 +40,9 @@ runtime-actix-rustls = ["casbin/runtime-tokio", "sqlx/runtime-actix-rustls"]
 offline = ["sqlx/offline"]
 
 [dev-dependencies]
-async-std = { version = "1.9.0", features = [ "attributes" ] }
-tokio = { version = "1.10.0", features = [ "full" ] }
-actix-rt = { version = "2.2.0" }
+async-std = { version = "1.12.0", features = [ "attributes" ] }
+tokio = { version = "1.24.2", features = [ "full" ] }
+actix-rt = { version = "2.7.0" }
 
 [profile.release]
 codegen-units = 1
